@@ -1,0 +1,378 @@
+<!DOCTYPE html><html><head>
+    <meta charset="utf-8">
+    <title>Orange Report</title>
+
+    <style>
+    html, body, table {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        margin:0px;
+        padding:0;
+        border:0 none;
+    }
+
+    h1, h2 , h3, h4, h5 {
+       padding: 1px;
+       font-size:100%;
+    }
+
+    h1 {
+        color: white;
+        background-color: black;
+        padding: 4px;
+        margin-top: 12px;
+        margin-bottom: 6px;
+    }
+
+    h2 {
+        border-bottom: 1px solid black;
+        padding-left: 2px;
+    }
+
+    ul, table, p {
+        padding: 10px;
+    }
+
+    table {
+        margin-left: -6px;
+    }
+
+    span.timestamp {
+        position: absolute;
+        right: 40px;
+        color:#ddd;
+    }
+
+    div.selected, div.normal {
+        margin: 5px;
+    }
+
+    div.selected {
+        background: #ddd;
+    }
+    @media print{
+        div.selected {
+            background: inherit;
+        }
+        ::-webkit-input-placeholder {
+            color: transparent;
+        }
+    }
+
+    div.content {
+        margin-left: 15px;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 2px 6px 2px 6px;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+    @media screen {
+        td, th {
+            white-space: nowrap;
+        }
+    }
+
+    .caption {
+        text-align: center;
+        font-size: 90%;
+    }
+
+    img {
+        display: block;
+        margin: auto;
+        max-height: 20cm;
+    }
+
+    span.legend-square {
+        width: 1em;
+        height: 1em;
+        margin-right: 6px;
+        display: inline-block;
+    }
+
+    span.legend-item {
+        margin-right: 24px;
+    }
+
+    textarea {
+        border: 1px solid silver;
+        font-style: italic;
+        width: 100%;
+        height: 4em;
+    }
+
+    .textwrapper {
+        padding: 15px;
+    }
+
+    div.normal textarea:invalid {
+        display: none;
+    }
+
+    div.selected textarea {
+        display: block;
+    }
+
+    @media print{
+        section.section, img {
+            page-break-inside: avoid;
+        }
+    }
+    </style>
+    <script>
+    function scrollToId(id) {
+        var sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.scrollIntoView();
+            return true;
+        }
+        return false;
+    };
+
+    function setSelectedId(id) {
+        var sel_el = document.getElementsByClassName('selected')[0];
+        if (sel_el != undefined && sel_el.id != id) {
+           sel_el.className = 'normal';
+        }
+        sel_el = document.getElementById(id);
+        if (sel_el != undefined) {
+            sel_el.className = 'selected';
+            return true;
+        }
+        return false;
+    };
+    </script>
+
+</head><body>
+
+ 
+
+<div id="1732191733504" class="normal" onclick="pybridge._select_item(this.id)"><section class="section"><h1>Predictions <span class="timestamp">Thu Oct 17 24, 00:40:51</span></h1><div class="content">
+<h2>Info</h2><p>Data:<br><nobr><b><u>winequality-red-preprocessed</u></b>: 1599 instances, 14 variables</nobr><br><nobr>Features: 13 numeric (no missing values)</nobr><br><nobr>Target: categorical</nobr></p><hr>Model: 1 model<ul><li>Gradient Boosting</li></ul><br>Showing probabilities for all classes known to the model.<p></p><h2>Data &amp; Predictions</h2><table>
+  <tbody><tr>
+    <th></th><th>Gradient Boosting</th><th>error</th><th>quality_category</th><th>pH</th><th>alcohol</th><th>sulphates</th><th>density</th><th>total sulfur dioxide</th><th>free sulfur dioxide</th><th>residual sugar</th><th>volatile acidity</th><th>chlorides</th><th>citric acid</th><th>fixed acidity</th><th>acidity_ratio</th><th>sulfur_ratio</th></tr>
+  <tr>
+    <th>1</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.51</td><td>9.4</td><td>0.56</td><td>0.99780</td><td>34.0</td><td>11.0</td><td>1.90</td><td>0.700</td><td>0.076</td><td>0.00</td><td>7.4</td><td>0.0945946</td><td>0.323529</td></tr>
+  <tr>
+    <th>2</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.20</td><td>9.8</td><td>0.68</td><td>0.99680</td><td>67.0</td><td>25.0</td><td>2.60</td><td>0.880</td><td>0.098</td><td>0.00</td><td>7.8</td><td>0.112821</td><td>0.373134</td></tr>
+  <tr>
+    <th>3</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.004</td><td>Low</td><td>3.26</td><td>9.8</td><td>0.65</td><td>0.99700</td><td>54.0</td><td>15.0</td><td>2.30</td><td>0.760</td><td>0.092</td><td>0.04</td><td>7.8</td><td>0.0974359</td><td>0.277778</td></tr>
+  <tr>
+    <th>4</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.007</td><td>Medium</td><td>3.16</td><td>9.8</td><td>0.58</td><td>0.99800</td><td>60.0</td><td>17.0</td><td>1.90</td><td>0.280</td><td>0.075</td><td>0.56</td><td>11.2</td><td>0.025</td><td>0.283333</td></tr>
+  <tr>
+    <th>5</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.51</td><td>9.4</td><td>0.56</td><td>0.99780</td><td>34.0</td><td>11.0</td><td>1.90</td><td>0.700</td><td>0.076</td><td>0.00</td><td>7.4</td><td>0.0945946</td><td>0.323529</td></tr>
+  <tr>
+    <th>6</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.51</td><td>9.4</td><td>0.56</td><td>0.99780</td><td>40.0</td><td>13.0</td><td>1.80</td><td>0.660</td><td>0.075</td><td>0.00</td><td>7.4</td><td>0.0891892</td><td>0.325</td></tr>
+  <tr>
+    <th>7</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.30</td><td>9.4</td><td>0.46</td><td>0.99640</td><td>59.0</td><td>15.0</td><td>1.60</td><td>0.600</td><td>0.069</td><td>0.06</td><td>7.9</td><td>0.0759494</td><td>0.254237</td></tr>
+  <tr>
+    <th>8</th><td>0.98 : 0.01 : 0.00 → High</td><td>0.016</td><td>High</td><td>3.39</td><td>10</td><td>0.47</td><td>0.99460</td><td>21.0</td><td>15.0</td><td>1.20</td><td>0.650</td><td>0.065</td><td>0.00</td><td>7.3</td><td>0.0890411</td><td>0.714286</td></tr>
+  <tr>
+    <th>9</th><td>0.98 : 0.01 : 0.01 → High</td><td>0.019</td><td>High</td><td>3.36</td><td>9.5</td><td>0.57</td><td>0.99680</td><td>18.0</td><td>9.0</td><td>2.00</td><td>0.580</td><td>0.073</td><td>0.02</td><td>7.8</td><td>0.074359</td><td>0.5</td></tr>
+  <tr>
+    <th>10</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.35</td><td>10.5</td><td>0.80</td><td>0.99780</td><td>102.0</td><td>17.0</td><td>6.10</td><td>0.500</td><td>0.071</td><td>0.36</td><td>7.5</td><td>0.0666667</td><td>0.166667</td></tr>
+  <tr>
+    <th>11</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.004</td><td>Low</td><td>3.28</td><td>9.2</td><td>0.54</td><td>0.99590</td><td>65.0</td><td>15.0</td><td>1.80</td><td>0.580</td><td>0.097</td><td>0.08</td><td>6.7</td><td>0.0865672</td><td>0.230769</td></tr>
+  <tr>
+    <th>12</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.35</td><td>10.5</td><td>0.80</td><td>0.99780</td><td>102.0</td><td>17.0</td><td>6.10</td><td>0.500</td><td>0.071</td><td>0.36</td><td>7.5</td><td>0.0666667</td><td>0.166667</td></tr>
+  <tr>
+    <th>13</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.58</td><td>9.9</td><td>0.52</td><td>0.99430</td><td>59.0</td><td>16.0</td><td>1.60</td><td>0.615</td><td>0.089</td><td>0.00</td><td>5.6</td><td>0.109821</td><td>0.271186</td></tr>
+  <tr>
+    <th>14</th><td>0.00 : 0.82 : 0.18 → Low</td><td>0.180</td><td>Low</td><td>3.26</td><td>9.1</td><td>1.56</td><td>0.99740</td><td>29.0</td><td>9.0</td><td>1.60</td><td>0.610</td><td>0.114</td><td>0.29</td><td>7.8</td><td>0.0782051</td><td>0.310345</td></tr>
+  <tr>
+    <th>15</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.16</td><td>9.2</td><td>0.88</td><td>0.99860</td><td>145.0</td><td>52.0</td><td>3.80</td><td>0.620</td><td>0.176</td><td>0.18</td><td>8.9</td><td>0.0696629</td><td>0.358621</td></tr>
+  <tr>
+    <th>16</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.17</td><td>9.2</td><td>0.93</td><td>0.99860</td><td>148.0</td><td>51.0</td><td>3.90</td><td>0.620</td><td>0.17</td><td>0.19</td><td>8.9</td><td>0.0696629</td><td>0.344595</td></tr>
+  <tr>
+    <th>17</th><td>0.99 : 0.01 : 0.00 → High</td><td>0.010</td><td>High</td><td>3.30</td><td>10.5</td><td>0.75</td><td>0.99690</td><td>103.0</td><td>35.0</td><td>1.80</td><td>0.280</td><td>0.092</td><td>0.56</td><td>8.5</td><td>0.0329412</td><td>0.339806</td></tr>
+  <tr>
+    <th>18</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.007</td><td>Low</td><td>3.11</td><td>9.3</td><td>1.28</td><td>0.99680</td><td>56.0</td><td>16.0</td><td>1.70</td><td>0.560</td><td>0.368</td><td>0.28</td><td>8.1</td><td>0.0691358</td><td>0.285714</td></tr>
+  <tr>
+    <th>19</th><td>0.00 : 0.80 : 0.20 → Low</td><td>0.202</td><td>Low</td><td>3.38</td><td>9</td><td>0.50</td><td>0.99740</td><td>29.0</td><td>6.0</td><td>4.40</td><td>0.590</td><td>0.086</td><td>0.08</td><td>7.4</td><td>0.0797297</td><td>0.206897</td></tr>
+  <tr>
+    <th>20</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.007</td><td>Medium</td><td>3.04</td><td>9.2</td><td>1.08</td><td>0.99690</td><td>56.0</td><td>17.0</td><td>1.80</td><td>0.320</td><td>0.341</td><td>0.51</td><td>7.9</td><td>0.0405063</td><td>0.303571</td></tr>
+  <tr>
+    <th>21</th><td>0.00 : 0.00 : 1.00 → Medium</td><td>0.003</td><td>Medium</td><td>3.39</td><td>9.4</td><td>0.53</td><td>0.99680</td><td>60.0</td><td>29.0</td><td>1.80</td><td>0.220</td><td>0.077</td><td>0.48</td><td>8.9</td><td>0.0247191</td><td>0.483333</td></tr>
+  <tr>
+    <th>22</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.008</td><td>Low</td><td>3.52</td><td>9.7</td><td>0.65</td><td>0.99820</td><td>71.0</td><td>23.0</td><td>2.30</td><td>0.390</td><td>0.082</td><td>0.31</td><td>7.6</td><td>0.0513158</td><td>0.323944</td></tr>
+  <tr>
+    <th>23</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.17</td><td>9.5</td><td>0.91</td><td>0.99660</td><td>37.0</td><td>10.0</td><td>1.60</td><td>0.430</td><td>0.106</td><td>0.21</td><td>7.9</td><td>0.0544304</td><td>0.27027</td></tr>
+  <tr>
+    <th>24</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.17</td><td>9.4</td><td>0.53</td><td>0.99680</td><td>67.0</td><td>9.0</td><td>2.30</td><td>0.490</td><td>0.084</td><td>0.11</td><td>8.5</td><td>0.0576471</td><td>0.134328</td></tr>
+  <tr>
+    <th>25</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.007</td><td>Medium</td><td>3.43</td><td>9.7</td><td>0.63</td><td>0.99680</td><td>40.0</td><td>21.0</td><td>2.40</td><td>0.400</td><td>0.085</td><td>0.14</td><td>6.9</td><td>0.057971</td><td>0.525</td></tr>
+  <tr>
+    <th>26</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.004</td><td>Low</td><td>3.34</td><td>9.3</td><td>0.56</td><td>0.99550</td><td>23.0</td><td>11.0</td><td>1.40</td><td>0.390</td><td>0.08</td><td>0.16</td><td>6.3</td><td>0.0619048</td><td>0.478261</td></tr>
+  <tr>
+    <th>27</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.006</td><td>Low</td><td>3.28</td><td>9.5</td><td>0.59</td><td>0.99620</td><td>11.0</td><td>4.0</td><td>1.80</td><td>0.410</td><td>0.08</td><td>0.24</td><td>7.6</td><td>0.0539474</td><td>0.363636</td></tr>
+  <tr>
+    <th>28</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.17</td><td>9.5</td><td>0.91</td><td>0.99660</td><td>37.0</td><td>10.0</td><td>1.60</td><td>0.430</td><td>0.106</td><td>0.21</td><td>7.9</td><td>0.0544304</td><td>0.27027</td></tr>
+  <tr>
+    <th>29</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.47</td><td>9.4</td><td>0.55</td><td>0.99720</td><td>35.0</td><td>14.0</td><td>1.90</td><td>0.710</td><td>0.08</td><td>0.00</td><td>7.1</td><td>0.1</td><td>0.4</td></tr>
+  <tr>
+    <th>30</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.009</td><td>Medium</td><td>3.38</td><td>9.8</td><td>0.59</td><td>0.99640</td><td>16.0</td><td>8.0</td><td>2.00</td><td>0.645</td><td>0.082</td><td>0.00</td><td>7.8</td><td>0.0826923</td><td>0.5</td></tr>
+  <tr>
+    <th>31</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.006</td><td>Low</td><td>3.35</td><td>10.1</td><td>0.54</td><td>0.99580</td><td>82.0</td><td>17.0</td><td>2.40</td><td>0.675</td><td>0.089</td><td>0.07</td><td>6.7</td><td>0.100746</td><td>0.207317</td></tr>
+  <tr>
+    <th>32</th><td>0.00 : 0.40 : 0.60 → Medium</td><td>0.399</td><td>Medium</td><td>3.46</td><td>10.6</td><td>0.57</td><td>0.99660</td><td>37.0</td><td>22.0</td><td>2.50</td><td>0.685</td><td>0.105</td><td>0.00</td><td>6.9</td><td>0.0992754</td><td>0.594595</td></tr>
+  <tr>
+    <th>33</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.17</td><td>9.8</td><td>0.66</td><td>0.99660</td><td>113.0</td><td>15.0</td><td>2.30</td><td>0.655</td><td>0.083</td><td>0.12</td><td>8.3</td><td>0.0789157</td><td>0.132743</td></tr>
+  <tr>
+    <th>34</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.012</td><td>Medium</td><td>3.45</td><td>9.4</td><td>0.52</td><td>0.99930</td><td>83.0</td><td>40.0</td><td>10.70</td><td>0.605</td><td>0.073</td><td>0.12</td><td>6.9</td><td>0.0876812</td><td>0.481928</td></tr>
+  <tr>
+    <th>35</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.003</td><td>Low</td><td>3.38</td><td>9.2</td><td>0.55</td><td>0.99570</td><td>50.0</td><td>13.0</td><td>1.80</td><td>0.320</td><td>0.103</td><td>0.25</td><td>5.2</td><td>0.0615385</td><td>0.26</td></tr>
+  <tr>
+    <th>36</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.006</td><td>Medium</td><td>3.40</td><td>9.6</td><td>0.55</td><td>0.99860</td><td>18.0</td><td>5.0</td><td>5.50</td><td>0.645</td><td>0.086</td><td>0.00</td><td>7.8</td><td>0.0826923</td><td>0.277778</td></tr>
+  <tr>
+    <th>37</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.007</td><td>Medium</td><td>3.42</td><td>10.8</td><td>0.60</td><td>0.99750</td><td>15.0</td><td>3.0</td><td>2.40</td><td>0.600</td><td>0.086</td><td>0.14</td><td>7.8</td><td>0.0769231</td><td>0.2</td></tr>
+  <tr>
+    <th>38</th><td>0.99 : 0.00 : 0.00 → High</td><td>0.006</td><td>High</td><td>3.23</td><td>9.7</td><td>0.73</td><td>0.99680</td><td>30.0</td><td>13.0</td><td>2.10</td><td>0.380</td><td>0.066</td><td>0.28</td><td>8.1</td><td>0.0469136</td><td>0.433333</td></tr>
+  <tr>
+    <th>39</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.50</td><td>9.8</td><td>0.48</td><td>0.99400</td><td>19.0</td><td>7.0</td><td>1.50</td><td>1.130</td><td>0.172</td><td>0.09</td><td>5.7</td><td>0.198246</td><td>0.368421</td></tr>
+  <tr>
+    <th>40</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.33</td><td>10.5</td><td>0.83</td><td>0.99780</td><td>87.0</td><td>12.0</td><td>5.90</td><td>0.450</td><td>0.074</td><td>0.36</td><td>7.3</td><td>0.0616438</td><td>0.137931</td></tr>
+  <tr>
+    <th>41</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.33</td><td>10.5</td><td>0.83</td><td>0.99780</td><td>87.0</td><td>12.0</td><td>5.90</td><td>0.450</td><td>0.074</td><td>0.36</td><td>7.3</td><td>0.0616438</td><td>0.137931</td></tr>
+  <tr>
+    <th>42</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.26</td><td>9.3</td><td>0.51</td><td>0.99760</td><td>46.0</td><td>17.0</td><td>2.80</td><td>0.610</td><td>0.088</td><td>0.30</td><td>8.8</td><td>0.0693182</td><td>0.369565</td></tr>
+  <tr>
+    <th>43</th><td>0.00 : 0.00 : 1.00 → Medium</td><td>0.004</td><td>Medium</td><td>3.21</td><td>10.5</td><td>0.90</td><td>0.99680</td><td>14.0</td><td>8.0</td><td>2.60</td><td>0.490</td><td>0.332</td><td>0.20</td><td>7.5</td><td>0.0653333</td><td>0.571429</td></tr>
+  <tr>
+    <th>44</th><td>0.00 : 0.99 : 0.00 → Low</td><td>0.005</td><td>Low</td><td>3.30</td><td>10.3</td><td>1.20</td><td>0.99680</td><td>23.0</td><td>9.0</td><td>2.20</td><td>0.660</td><td>0.069</td><td>0.22</td><td>8.1</td><td>0.0814815</td><td>0.391304</td></tr>
+  <tr>
+    <th>45</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.004</td><td>Low</td><td>3.48</td><td>9.5</td><td>0.52</td><td>0.99620</td><td>11.0</td><td>5.0</td><td>1.80</td><td>0.670</td><td>0.05</td><td>0.02</td><td>6.8</td><td>0.0985294</td><td>0.454545</td></tr>
+  <tr>
+    <th>46</th><td>0.00 : 0.90 : 0.09 → Low</td><td>0.097</td><td>Low</td><td>3.90</td><td>13.1</td><td>0.56</td><td>0.99340</td><td>65.0</td><td>8.0</td><td>2.10</td><td>0.520</td><td>0.054</td><td>0.15</td><td>4.6</td><td>0.113043</td><td>0.123077</td></tr>
+  <tr>
+    <th>47</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.25</td><td>9.2</td><td>0.73</td><td>0.99700</td><td>114.0</td><td>22.0</td><td>2.20</td><td>0.935</td><td>0.114</td><td>0.43</td><td>7.7</td><td>0.121429</td><td>0.192982</td></tr>
+  <tr>
+    <th>48</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.25</td><td>9.5</td><td>0.58</td><td>0.99690</td><td>37.0</td><td>12.0</td><td>1.60</td><td>0.290</td><td>0.113</td><td>0.52</td><td>8.7</td><td>0.0333333</td><td>0.324324</td></tr>
+  <tr>
+    <th>49</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.006</td><td>Low</td><td>3.34</td><td>9.2</td><td>0.56</td><td>0.99580</td><td>12.0</td><td>5.0</td><td>1.60</td><td>0.400</td><td>0.066</td><td>0.23</td><td>6.4</td><td>0.0625</td><td>0.416667</td></tr>
+  <tr>
+    <th>50</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.32</td><td>9.2</td><td>0.58</td><td>0.99540</td><td>96.0</td><td>12.0</td><td>1.40</td><td>0.310</td><td>0.074</td><td>0.37</td><td>5.6</td><td>0.0553571</td><td>0.125</td></tr>
+  <tr>
+    <th>51</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.15</td><td>9.2</td><td>0.74</td><td>0.99710</td><td>23.0</td><td>4.0</td><td>1.70</td><td>0.660</td><td>0.074</td><td>0.26</td><td>8.8</td><td>0.075</td><td>0.173913</td></tr>
+  <tr>
+    <th>52</th><td>0.00 : 0.00 : 1.00 → Medium</td><td>0.003</td><td>Medium</td><td>3.40</td><td>9.4</td><td>0.63</td><td>0.99560</td><td>15.0</td><td>8.0</td><td>2.20</td><td>0.520</td><td>0.069</td><td>0.04</td><td>6.6</td><td>0.0787879</td><td>0.533333</td></tr>
+  <tr>
+    <th>53</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.006</td><td>Medium</td><td>3.39</td><td>9.4</td><td>0.64</td><td>0.99550</td><td>14.0</td><td>6.0</td><td>2.10</td><td>0.500</td><td>0.068</td><td>0.04</td><td>6.6</td><td>0.0757576</td><td>0.428571</td></tr>
+  <tr>
+    <th>54</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.20</td><td>9.4</td><td>0.56</td><td>0.99700</td><td>119.0</td><td>30.0</td><td>3.00</td><td>0.380</td><td>0.081</td><td>0.36</td><td>8.6</td><td>0.044186</td><td>0.252101</td></tr>
+  <tr>
+    <th>55</th><td>0.00 : 0.00 : 1.00 → Medium</td><td>0.004</td><td>Medium</td><td>3.17</td><td>10.2</td><td>0.63</td><td>0.99550</td><td>73.0</td><td>33.0</td><td>2.80</td><td>0.510</td><td>0.11</td><td>0.15</td><td>7.6</td><td>0.0671053</td><td>0.452055</td></tr>
+  <tr>
+    <th>56</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.34</td><td>9.5</td><td>0.53</td><td>0.99780</td><td>45.0</td><td>25.0</td><td>3.80</td><td>0.620</td><td>0.084</td><td>0.04</td><td>7.7</td><td>0.0805195</td><td>0.555556</td></tr>
+  <tr>
+    <th>57</th><td>0.00 : 0.96 : 0.04 → Low</td><td>0.042</td><td>Low</td><td>3.04</td><td>9.6</td><td>0.63</td><td>0.99710</td><td>10.0</td><td>4.0</td><td>3.40</td><td>0.420</td><td>0.07</td><td>0.57</td><td>10.2</td><td>0.0411765</td><td>0.4</td></tr>
+  <tr>
+    <th>58</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.26</td><td>9.4</td><td>0.77</td><td>0.99830</td><td>110.0</td><td>50.0</td><td>5.10</td><td>0.630</td><td>0.111</td><td>0.12</td><td>7.5</td><td>0.084</td><td>0.454545</td></tr>
+  <tr>
+    <th>59</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.43</td><td>10</td><td>0.59</td><td>0.99750</td><td>54.0</td><td>17.0</td><td>2.30</td><td>0.590</td><td>0.076</td><td>0.18</td><td>7.8</td><td>0.075641</td><td>0.314815</td></tr>
+  <tr>
+    <th>60</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.009</td><td>Medium</td><td>3.41</td><td>9.4</td><td>0.54</td><td>0.99620</td><td>46.0</td><td>9.0</td><td>2.40</td><td>0.390</td><td>0.074</td><td>0.31</td><td>7.3</td><td>0.0534247</td><td>0.195652</td></tr>
+  <tr>
+    <th>61</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.003</td><td>Low</td><td>3.44</td><td>9.2</td><td>0.64</td><td>0.99800</td><td>52.0</td><td>19.0</td><td>2.20</td><td>0.400</td><td>0.079</td><td>0.40</td><td>8.8</td><td>0.0454545</td><td>0.365385</td></tr>
+  <tr>
+    <th>62</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.21</td><td>9.3</td><td>0.71</td><td>0.99680</td><td>112.0</td><td>20.0</td><td>1.80</td><td>0.690</td><td>0.115</td><td>0.49</td><td>7.7</td><td>0.0896104</td><td>0.178571</td></tr>
+  <tr>
+    <th>63</th><td>0.99 : 0.00 : 0.01 → High</td><td>0.012</td><td>High</td><td>3.38</td><td>9.5</td><td>0.62</td><td>0.99680</td><td>35.0</td><td>12.0</td><td>1.90</td><td>0.520</td><td>0.085</td><td>0.16</td><td>7.5</td><td>0.0693333</td><td>0.342857</td></tr>
+  <tr>
+    <th>64</th><td>0.00 : 0.92 : 0.08 → Low</td><td>0.077</td><td>Low</td><td>3.39</td><td>9.8</td><td>0.57</td><td>0.99660</td><td>54.0</td><td>13.0</td><td>2.00</td><td>0.735</td><td>0.081</td><td>0.05</td><td>7.0</td><td>0.105</td><td>0.240741</td></tr>
+  <tr>
+    <th>65</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.41</td><td>10.9</td><td>0.39</td><td>0.99620</td><td>11.0</td><td>4.0</td><td>4.65</td><td>0.725</td><td>0.086</td><td>0.05</td><td>7.2</td><td>0.100694</td><td>0.363636</td></tr>
+  <tr>
+    <th>66</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.41</td><td>10.9</td><td>0.39</td><td>0.99620</td><td>11.0</td><td>4.0</td><td>4.65</td><td>0.725</td><td>0.086</td><td>0.05</td><td>7.2</td><td>0.100694</td><td>0.363636</td></tr>
+  <tr>
+    <th>67</th><td>0.00 : 0.85 : 0.15 → Low</td><td>0.152</td><td>Low</td><td>3.42</td><td>9.6</td><td>0.58</td><td>0.99680</td><td>39.0</td><td>11.0</td><td>1.50</td><td>0.520</td><td>0.079</td><td>0.11</td><td>7.5</td><td>0.0693333</td><td>0.282051</td></tr>
+  <tr>
+    <th>68</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.004</td><td>Low</td><td>3.44</td><td>10.7</td><td>0.58</td><td>0.99620</td><td>15.0</td><td>6.0</td><td>1.60</td><td>0.705</td><td>0.076</td><td>0.07</td><td>6.6</td><td>0.106818</td><td>0.4</td></tr>
+  <tr>
+    <th>69</th><td>0.01 : 0.99 : 0.01 → Low</td><td>0.011</td><td>Low</td><td>3.28</td><td>10.7</td><td>0.79</td><td>0.99690</td><td>65.0</td><td>27.0</td><td>2.00</td><td>0.320</td><td>0.074</td><td>0.57</td><td>9.3</td><td>0.0344086</td><td>0.415385</td></tr>
+  <tr>
+    <th>70</th><td>0.00 : 0.00 : 0.99 → Medium</td><td>0.009</td><td>Medium</td><td>3.34</td><td>10.5</td><td>0.95</td><td>0.99620</td><td>19.0</td><td>8.0</td><td>1.90</td><td>0.705</td><td>0.074</td><td>0.05</td><td>8.0</td><td>0.088125</td><td>0.421053</td></tr>
+  <tr>
+    <th>71</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.010</td><td>Medium</td><td>3.32</td><td>9.5</td><td>0.54</td><td>0.99670</td><td>27.0</td><td>15.0</td><td>1.90</td><td>0.630</td><td>0.076</td><td>0.08</td><td>7.7</td><td>0.0818182</td><td>0.555556</td></tr>
+  <tr>
+    <th>72</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.32</td><td>9.5</td><td>0.48</td><td>0.99620</td><td>96.0</td><td>17.0</td><td>2.10</td><td>0.670</td><td>0.088</td><td>0.23</td><td>7.7</td><td>0.087013</td><td>0.177083</td></tr>
+  <tr>
+    <th>73</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.004</td><td>Low</td><td>3.31</td><td>9.5</td><td>0.48</td><td>0.99610</td><td>94.0</td><td>18.0</td><td>1.90</td><td>0.690</td><td>0.084</td><td>0.22</td><td>7.7</td><td>0.0896104</td><td>0.191489</td></tr>
+  <tr>
+    <th>74</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.31</td><td>9.2</td><td>0.53</td><td>0.99760</td><td>43.0</td><td>11.0</td><td>2.10</td><td>0.675</td><td>0.084</td><td>0.26</td><td>8.3</td><td>0.0813253</td><td>0.255814</td></tr>
+  <tr>
+    <th>75</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.28</td><td>9.6</td><td>0.82</td><td>0.99840</td><td>83.0</td><td>28.0</td><td>2.50</td><td>0.320</td><td>0.094</td><td>0.54</td><td>9.7</td><td>0.0329897</td><td>0.337349</td></tr>
+  <tr>
+    <th>76</th><td>0.04 : 0.17 : 0.79 → Medium</td><td>0.827</td><td>Low</td><td>3.54</td><td>10.5</td><td>0.66</td><td>0.99860</td><td>42.0</td><td>9.0</td><td>2.20</td><td>0.410</td><td>0.093</td><td>0.64</td><td>8.8</td><td>0.0465909</td><td>0.214286</td></tr>
+  <tr>
+    <th>77</th><td>0.04 : 0.17 : 0.79 → Medium</td><td>0.827</td><td>Low</td><td>3.54</td><td>10.5</td><td>0.66</td><td>0.99860</td><td>42.0</td><td>9.0</td><td>2.20</td><td>0.410</td><td>0.093</td><td>0.64</td><td>8.8</td><td>0.0465909</td><td>0.214286</td></tr>
+  <tr>
+    <th>78</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.007</td><td>Medium</td><td>3.52</td><td>10.7</td><td>0.55</td><td>0.99660</td><td>30.0</td><td>14.0</td><td>2.40</td><td>0.785</td><td>0.104</td><td>0.00</td><td>6.8</td><td>0.115441</td><td>0.466667</td></tr>
+  <tr>
+    <th>79</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.38</td><td>10.1</td><td>0.52</td><td>0.99580</td><td>80.0</td><td>12.0</td><td>2.00</td><td>0.750</td><td>0.086</td><td>0.12</td><td>6.7</td><td>0.11194</td><td>0.15</td></tr>
+  <tr>
+    <th>80</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.003</td><td>Low</td><td>3.16</td><td>9.1</td><td>1.12</td><td>0.99720</td><td>119.0</td><td>27.0</td><td>1.50</td><td>0.625</td><td>0.08</td><td>0.20</td><td>8.3</td><td>0.0753012</td><td>0.226891</td></tr>
+  <tr>
+    <th>81</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.41</td><td>9.2</td><td>0.56</td><td>0.99580</td><td>15.0</td><td>3.0</td><td>1.60</td><td>0.450</td><td>0.069</td><td>0.20</td><td>6.2</td><td>0.0725806</td><td>0.2</td></tr>
+  <tr>
+    <th>82</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.010</td><td>Low</td><td>3.13</td><td>9.4</td><td>1.28</td><td>0.99740</td><td>67.0</td><td>22.0</td><td>1.90</td><td>0.430</td><td>0.464</td><td>0.70</td><td>7.8</td><td>0.0551282</td><td>0.328358</td></tr>
+  <tr>
+    <th>83</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.005</td><td>Low</td><td>3.36</td><td>9.1</td><td>0.57</td><td>0.99700</td><td>73.0</td><td>21.0</td><td>2.00</td><td>0.500</td><td>0.086</td><td>0.47</td><td>7.4</td><td>0.0675676</td><td>0.287671</td></tr>
+  <tr>
+    <th>84</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.16</td><td>9.4</td><td>1.14</td><td>0.99690</td><td>51.0</td><td>16.0</td><td>1.80</td><td>0.670</td><td>0.401</td><td>0.26</td><td>7.3</td><td>0.0917808</td><td>0.313725</td></tr>
+  <tr>
+    <th>85</th><td>0.00 : 0.00 : 1.00 → Medium</td><td>0.005</td><td>Medium</td><td>3.44</td><td>10.3</td><td>0.78</td><td>0.99590</td><td>61.0</td><td>18.0</td><td>1.80</td><td>0.300</td><td>0.069</td><td>0.48</td><td>6.3</td><td>0.047619</td><td>0.295082</td></tr>
+  <tr>
+    <th>86</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.009</td><td>Low</td><td>3.41</td><td>10.1</td><td>0.59</td><td>0.99610</td><td>40.0</td><td>19.0</td><td>2.20</td><td>0.550</td><td>0.076</td><td>0.15</td><td>6.9</td><td>0.0797101</td><td>0.475</td></tr>
+  <tr>
+    <th>87</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.008</td><td>Medium</td><td>2.93</td><td>9.9</td><td>1.95</td><td>0.99720</td><td>136.0</td><td>20.0</td><td>1.90</td><td>0.490</td><td>0.11</td><td>0.28</td><td>8.6</td><td>0.0569767</td><td>0.147059</td></tr>
+  <tr>
+    <th>88</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.006</td><td>Low</td><td>3.39</td><td>9.6</td><td>0.64</td><td>0.99660</td><td>31.0</td><td>9.0</td><td>1.90</td><td>0.490</td><td>0.062</td><td>0.26</td><td>7.7</td><td>0.0636364</td><td>0.290323</td></tr>
+  <tr>
+    <th>89</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.000</td><td>Low</td><td>3.14</td><td>9.5</td><td>1.22</td><td>0.99780</td><td>125.0</td><td>34.0</td><td>2.10</td><td>0.390</td><td>0.107</td><td>0.44</td><td>9.3</td><td>0.0419355</td><td>0.272</td></tr>
+  <tr>
+    <th>90</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.002</td><td>Low</td><td>3.48</td><td>9</td><td>0.53</td><td>0.99780</td><td>24.0</td><td>8.0</td><td>1.80</td><td>0.620</td><td>0.076</td><td>0.08</td><td>7.0</td><td>0.0885714</td><td>0.333333</td></tr>
+  <tr>
+    <th>91</th><td>0.00 : 0.98 : 0.02 → Low</td><td>0.019</td><td>Low</td><td>3.23</td><td>9.5</td><td>0.54</td><td>0.99640</td><td>140.0</td><td>42.0</td><td>1.90</td><td>0.520</td><td>0.079</td><td>0.26</td><td>7.9</td><td>0.0658228</td><td>0.3</td></tr>
+  <tr>
+    <th>92</th><td>0.00 : 0.01 : 0.99 → Medium</td><td>0.008</td><td>Medium</td><td>2.93</td><td>9.9</td><td>1.95</td><td>0.99720</td><td>136.0</td><td>20.0</td><td>1.90</td><td>0.490</td><td>0.11</td><td>0.28</td><td>8.6</td><td>0.0569767</td><td>0.147059</td></tr>
+  <tr>
+    <th>93</th><td>0.00 : 0.04 : 0.96 → Medium</td><td>0.964</td><td>Low</td><td>2.93</td><td>9.8</td><td>1.98</td><td>0.99720</td><td>133.0</td><td>19.0</td><td>2.00</td><td>0.490</td><td>0.11</td><td>0.29</td><td>8.6</td><td>0.0569767</td><td>0.142857</td></tr>
+  <tr>
+    <th>94</th><td>0.00 : 0.99 : 0.01 → Low</td><td>0.006</td><td>Low</td><td>3.39</td><td>9.6</td><td>0.64</td><td>0.99660</td><td>31.0</td><td>9.0</td><td>1.90</td><td>0.490</td><td>0.062</td><td>0.26</td><td>7.7</td><td>0.0636364</td><td>0.290323</td></tr>
+  <tr>
+    <th>95</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.003</td><td>Low</td><td>3.75</td><td>10.5</td><td>0.48</td><td>0.99380</td><td>85.0</td><td>41.0</td><td>1.40</td><td>1.020</td><td>0.045</td><td>0.04</td><td>5.0</td><td>0.204</td><td>0.482353</td></tr>
+  <tr>
+    <th>96</th><td>0.01 : 0.98 : 0.01 → Low</td><td>0.988</td><td>Medium</td><td>3.85</td><td>12.9</td><td>0.60</td><td>0.99320</td><td>106.0</td><td>17.0</td><td>2.30</td><td>0.600</td><td>0.058</td><td>0.17</td><td>4.7</td><td>0.12766</td><td>0.160377</td></tr>
+  <tr>
+    <th>97</th><td>0.00 : 0.47 : 0.52 → Medium</td><td>0.525</td><td>Low</td><td>3.45</td><td>10.7</td><td>0.56</td><td>0.99650</td><td>23.0</td><td>8.0</td><td>3.00</td><td>0.775</td><td>0.102</td><td>0.00</td><td>6.8</td><td>0.113971</td><td>0.347826</td></tr>
+  <tr>
+    <th>98</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.003</td><td>Low</td><td>3.25</td><td>9.2</td><td>0.63</td><td>0.99630</td><td>22.0</td><td>3.0</td><td>2.00</td><td>0.500</td><td>0.07</td><td>0.25</td><td>7.0</td><td>0.0714286</td><td>0.136364</td></tr>
+  <tr>
+    <th>99</th><td>0.00 : 1.00 : 0.00 → Low</td><td>0.001</td><td>Low</td><td>3.39</td><td>9.8</td><td>0.56</td><td>0.99670</td><td>10.0</td><td>5.0</td><td>2.50</td><td>0.900</td><td>0.079</td><td>0.06</td><td>7.6</td><td>0.118421</td><td>0.5</td></tr>
+  <tr>
+    <th>100</th><td>0.00 : 0.00 : 1.00 → Medium</td><td>0.001</td><td>Medium</td><td>3.30</td><td>9</td><td>0.59</td><td>0.99720</td><td>35.0</td><td>13.0</td><td>1.90</td><td>0.545</td><td>0.08</td><td>0.18</td><td>8.1</td><td>0.067284</td><td>0.371429</td></tr>
+<tr><th></th><td colspan="17"><b>+ 1399 more</b></td></tr>
+            </tbody></table><h2>Scores</h2><ul><b>Target class:</b> (Average over classes)<br></ul><table>
+<tbody><tr><th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Model</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">AUC</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">CA</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">F1</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Prec</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">Recall</th>
+<th style="color:black; background:transparent; text-align:left; vertical-align:middle;">MCC</th>
+</tr><tr><td style="color:black; background:transparent; text-align:left; vertical-align:middle;">Gradient Boosting</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">0.988</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">0.936</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">0.936</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">0.936</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">0.936</td>
+<td style="color:black; background:transparent; text-align:left; vertical-align:middle;">0.895</td>
+</tr></tbody></table></div></section>
+
+<div class="textwrapper"><textarea placeholder="Write a comment..." oninput="this.innerHTML = this.value;pybridge._add_comment(this.parentNode.parentNode.id, this.value);"></textarea></div></div></body></html>
